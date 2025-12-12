@@ -155,12 +155,39 @@ git clone https://github.com/Nima-Sarfaraz/Soft-Agar-Colony-Counter.git
 
 #### Step 3: Run with Docker
 
-Open a terminal/command prompt in the project folder and run:
-```bash
-docker compose up
-```
+<details>
+<summary><strong>macOS / Linux</strong></summary>
 
-Then open http://localhost:8000 in your browser.
+1. Open **Terminal**
+2. Navigate to the folder where you extracted the files:
+   ```bash
+   cd ~/Desktop/Soft-Agar-Colony-Counter-master
+   ```
+   > **Note:** The folder may be named `Soft-Agar-Colony-Counter-master` or `Soft-Agar-Colony-Counter` depending on how you downloaded it.
+3. Run Docker:
+   ```bash
+   docker compose up
+   ```
+4. Open http://localhost:8000 in your browser
+
+</details>
+
+<details>
+<summary><strong>Windows</strong></summary>
+
+1. Press `Win + R`, type `cmd`, press Enter
+2. Navigate to the folder where you extracted the files:
+   ```
+   cd C:\Users\YourName\Desktop\Soft-Agar-Colony-Counter-master
+   ```
+   > **Note:** The folder may be named `Soft-Agar-Colony-Counter-master` or `Soft-Agar-Colony-Counter` depending on how you downloaded it.
+3. Run Docker:
+   ```
+   docker compose up
+   ```
+4. Open http://localhost:8000 in your browser
+
+</details>
 
 **To stop:** Press `Ctrl + C` in the terminal.
 
