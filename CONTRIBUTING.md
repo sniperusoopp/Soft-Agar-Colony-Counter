@@ -27,6 +27,9 @@ cd Soft-Agar-Colony-Counter
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install -e ".[api]"
+
+# Install git hooks (auto-rebuilds frontend on commit)
+./scripts/setup-hooks.sh
 ```
 
 ### Option 2: Conda

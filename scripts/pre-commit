@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Pre-commit hook: Rebuild frontend if source files changed
+
+# Check if any frontend/src files are staged
+if git diff --cached --name-only | grep -q "^frontend/src/"; then
+    echo "🔨 Frontend source changed, rebuilding dist..."
+    
+    # Check if npm is available
+    if ! command -v npm &> /dev/null; then
+        echo "❌ npm not found - cannot rebuild frontend"
+        echo "   Please run: cd frontend && npm run build"
+        exit 1
+    fi
+    
+    # Rebuild frontend
+    cd frontend
+    if npm run build > /dev/null 2>&1; then
+        cd ..
+        # Add the rebuilt dist files to the commit
+        git add frontend/dist/
+        echo "✅ Frontend rebuilt and added to commit"
+    else
+        echo "❌ Frontend build failed"
+        exit 1
+    fi
+fi
+
+exit 0
+
