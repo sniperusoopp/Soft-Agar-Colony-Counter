@@ -76,8 +76,8 @@ echo [OK] Starting server at http://localhost:8000
 echo Press Ctrl+C to stop
 echo.
 
-REM Open browser after a short delay
-start "" timeout /t 2 /nobreak >nul & start http://localhost:8000
+REM Open browser after a short delay (in background)
+start /b cmd /c "timeout /t 2 /nobreak >nul && start http://localhost:8000"
 
 REM Start the server
 uvicorn api.main:app --host 127.0.0.1 --port 8000
