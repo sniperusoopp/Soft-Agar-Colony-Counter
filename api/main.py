@@ -26,7 +26,7 @@ import numpy as np
 
 app = FastAPI(
     title="Soft Agar Colony Counter API",
-    version="0.1.0",
+    version="1.0.0",
     description="Expose colony detection over HTTP for web clients or automation.",
 )
 
